@@ -23,4 +23,4 @@ else:
     reminder += "."
 
 # Step 4: Provide the customized reminder
-print("\nReminder:", reminder)
+print(f"Reminder: {reminder}")
