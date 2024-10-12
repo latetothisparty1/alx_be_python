@@ -10,19 +10,17 @@ class BankAccount:
         """Add the specified amount to the account balance."""
         if amount > 0:
             self.account_balance += amount
-            import sys
-            sys.stdout.write(f"Deposited: ${amount:.1f}")  # Write to stdout without appending a newline character
-            sys.stdout.flush()  
+            print(f"Deposited: ${amount:.1f}", end='')  # Format to one decimal place
+        else:
+            print("Deposit amount must be positive.")
 
     def withdraw(self, amount):
-        """Deduct the specified amount from the account balance if sufficient funds are available."""
-        if 0 < amount <= self.account_balance:
+        """Subtract the specified amount from the account balance."""
+        if amount > 0 and amount <= self.account_balance:
             self.account_balance -= amount
-            print(f"Withdrew: ${amount:.2f}")
-            return True
+            print(f"Withdrew: ${amount:.1f}")  # Format to one decimal place
         else:
-            print("Insufficient funds or invalid withdrawal amount.")
-            return False
+            print("Insufficient funds.")  # Concise error message
 
     def display_balance(self):
         """Print the current balance in a user-friendly format."""
