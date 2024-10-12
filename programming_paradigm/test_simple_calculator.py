@@ -11,7 +11,7 @@ class TestSimpleCalculator(unittest.TestCase):
     # Test the add method
     def test_add(self):
         # Test normal operation
-        self.assertEqual(self.calculator.add(2, 3), 5)
+        self.assertEqual(self.calculator.add(2, 3), 5)  # Corrected assertion format
         # Test edge case: adding zero
         self.assertEqual(self.calculator.add(2, 0), 2)
 
