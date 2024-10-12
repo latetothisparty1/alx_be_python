@@ -10,9 +10,9 @@ class BankAccount:
         """Add the specified amount to the account balance."""
         if amount > 0:
             self.account_balance += amount
-            print(f"Deposited: ${amount:.1f}")  # Format to one decimal place
-        else:
-            print("Deposit amount must be positive.")
+            import sys
+            sys.stdout.write(f"Deposited: ${amount:.1f}")  # Write to stdout without appending a newline character
+            sys.stdout.flush()  
 
     def withdraw(self, amount):
         """Deduct the specified amount from the account balance if sufficient funds are available."""
